@@ -1,0 +1,38 @@
+CREATE TABLE IF NOT EXISTS CATEGORIES (
+    id IDENTITY NOT NULL PRIMARY KEY ,
+    name VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS  CERTIFICATIONS (
+    id IDENTITY NOT NULL PRIMARY KEY,
+    title VARCHAR(50) NOT NULL,
+    quarter INT NOT NULL,
+    category_id INT,
+    price INT NOT NULL,
+    FOREIGN KEY (category_id) references CATEGORIES(id),
+    CONSTRAINT CHK_quarter CHECK (quarter >= 1 AND quarter<=4)
+);
+
+CREATE TABLE IF NOT EXISTS ROLES (
+    id IDENTITY NOT NULL PRIMARY KEY,
+    name VARCHAR(50) NOT NULL UNIQUE
+);
+
+CREATE TABLE IF NOT EXISTS USERS (
+    id IDENTITY NOT NULL PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    role_id INT,
+    FOREIGN KEY (role_id) REFERENCES ROLES(id)
+);
+
+CREATE TABLE IF NOT EXISTS REQUESTS (
+    id IDENTITY NOT NULL PRIMARY KEY,
+    user_id INT,
+    certification_id INT,
+    status VARCHAR(50) NOT NULL,
+    business_justification VARCHAR(500) NOT NULL,
+    FOREIGN KEY (certification_id) REFERENCES CERTIFICATIONS(id),
+    FOREIGN KEY (user_id) REFERENCES USERS(id),
+    CONSTRAINT chk_status CHECK (status IN ('Approved', 'Pending', 'Rejected'))
+);
