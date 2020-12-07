@@ -13,10 +13,10 @@
         <property name="show_sql">true</property>
         <property name="hbm2ddl.auto">none</property>
 
-        <mapping class="com.ibm.certmaster.models.Category"/>
-        <mapping class="com.ibm.certmaster.models.Certification"/>
-        <mapping class="com.ibm.certmaster.models.Role"/>
-        <mapping class="com.ibm.certmaster.models.User"/>
-        <mapping class="com.ibm.certmaster.models.Request"/>
+        <mapping class="com.tw.certmaster.models.Category"/>
+        <mapping class="com.tw.certmaster.models.Certification"/>
+        <mapping class="com.tw.certmaster.models.Role"/>
+        <mapping class="com.tw.certmaster.models.User"/>
+        <mapping class="com.tw.certmaster.models.Request"/>
     </session-factory>
 </hibernate-configuration>
