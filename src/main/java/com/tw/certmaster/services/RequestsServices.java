@@ -18,7 +18,7 @@ public class RequestsServices {
 
         session.beginTransaction();
 
-        String hql = "SELECT new com.ibm.certmaster.results.RequestResult(R.id, U.id, U.name, C.title, Ca.id, C.quarter, Ca.name, R.status, C.price, R.business_justification)\n" +
+        String hql = "SELECT new com.tw.certmaster.results.RequestResult(R.id, U.id, U.name, C.title, Ca.id, C.quarter, Ca.name, R.status, C.price, R.business_justification)\n" +
                 "FROM Request R\n" +
                     "INNER JOIN Certification C ON R.certification_id = C.id\n" +
                     "INNER JOIN User U ON R.user_id = U.id\n" +
@@ -40,7 +40,7 @@ public class RequestsServices {
         Session session = sessionFactory.openSession();
 
         session.beginTransaction();
-        String hql = "SELECT new com.ibm.certmaster.results.RequestResult(R.id, U.id, U.name, C.title, Ca.id, C.quarter, Ca.name, R.status, C.price, R.business_justification)\n" +
+        String hql = "SELECT new com.tw.certmaster.results.RequestResult(R.id, U.id, U.name, C.title, Ca.id, C.quarter, Ca.name, R.status, C.price, R.business_justification)\n" +
                 "FROM Request R\n" +
                     "INNER JOIN Certification C ON R.certification_id = C.id\n" +
                     "INNER JOIN User U ON R.user_id = U.id\n" +
@@ -126,7 +126,7 @@ public class RequestsServices {
         ArrayList<RequestResult> requests = new ArrayList<>();
 
         if( quarter == null && status != null ) {
-            hql = "SELECT new com.ibm.certmaster.results.RequestResult(R.id, U.id, U.name, C.title, Ca.id, C.quarter, Ca.name, R.status, C.price, R.business_justification)\n" +
+            hql = "SELECT new com.tw.certmaster.results.RequestResult(R.id, U.id, U.name, C.title, Ca.id, C.quarter, Ca.name, R.status, C.price, R.business_justification)\n" +
                 "FROM Request R\n" +
                 "INNER JOIN Certification C ON R.certification_id = C.id\n" +
                 "INNER JOIN User U ON R.user_id = U.id\n" +
@@ -139,7 +139,7 @@ public class RequestsServices {
         }
 
         if( quarter != null && status == null ) {
-            hql = "SELECT new com.ibm.certmaster.results.RequestResult(R.id, U.id, U.name, C.title, Ca.id, C.quarter, Ca.name, R.status, C.price, R.business_justification)\n" +
+            hql = "SELECT new com.tw.certmaster.results.RequestResult(R.id, U.id, U.name, C.title, Ca.id, C.quarter, Ca.name, R.status, C.price, R.business_justification)\n" +
                 "FROM Request R\n" +
                 "INNER JOIN Certification C ON R.certification_id = C.id\n" +
                 "INNER JOIN User U ON R.user_id = U.id\n" +
@@ -152,7 +152,7 @@ public class RequestsServices {
         }
 
         if( quarter == null && status == null ) {
-            hql = "SELECT new com.ibm.certmaster.results.RequestResult(R.id, U.id, U.name, C.title, Ca.id, C.quarter, Ca.name, R.status, C.price, R.business_justification)\n" +
+            hql = "SELECT new com.tw.certmaster.results.RequestResult(R.id, U.id, U.name, C.title, Ca.id, C.quarter, Ca.name, R.status, C.price, R.business_justification)\n" +
                 "FROM Request R\n" +
                 "INNER JOIN Certification C ON R.certification_id = C.id\n" +
                 "INNER JOIN User U ON R.user_id = U.id\n" +
@@ -163,7 +163,7 @@ public class RequestsServices {
         }
 
         if( quarter != null && status != null ) {
-            hql = "SELECT new com.ibm.certmaster.results.RequestResult(R.id, U.id, U.name, C.title, Ca.id, C.quarter, Ca.name, R.status, C.price, R.business_justification)\n" +
+            hql = "SELECT new com.tw.certmaster.results.RequestResult(R.id, U.id, U.name, C.title, Ca.id, C.quarter, Ca.name, R.status, C.price, R.business_justification)\n" +
                 "FROM Request R\n" +
                 "INNER JOIN Certification C ON R.certification_id = C.id\n" +
                 "INNER JOIN User U ON R.user_id = U.id\n" +
@@ -192,7 +192,7 @@ public class RequestsServices {
         ArrayList<RequestResultExcel> requests = new ArrayList<>();
 
         if( quarter == null && status != null ) {
-            hql = "SELECT new com.ibm.certmaster.results.RequestResultExcel(U.name, C.title, C.quarter, Ca.name, R.status, C.price, R.business_justification)\n" +
+            hql = "SELECT new com.tw.certmaster.results.RequestResultExcel(U.name, C.title, C.quarter, Ca.name, R.status, C.price, R.business_justification)\n" +
                     "FROM Request R\n" +
                     "INNER JOIN Certification C ON R.certification_id = C.id\n" +
                     "INNER JOIN User U ON R.user_id = U.id\n" +
@@ -205,7 +205,7 @@ public class RequestsServices {
         }
 
         if( quarter != null && status == null ) {
-            hql = "SELECT new com.ibm.certmaster.results.RequestResultExcel(U.name, C.title, C.quarter, Ca.name, R.status, C.price, R.business_justification)\n" +
+            hql = "SELECT new com.tw.certmaster.results.RequestResultExcel(U.name, C.title, C.quarter, Ca.name, R.status, C.price, R.business_justification)\n" +
                     "FROM Request R\n" +
                     "INNER JOIN Certification C ON R.certification_id = C.id\n" +
                     "INNER JOIN User U ON R.user_id = U.id\n" +
@@ -218,7 +218,7 @@ public class RequestsServices {
         }
 
         if( quarter == null && status == null ) {
-            hql = "SELECT new com.ibm.certmaster.results.RequestResultExcel(U.name, C.title, C.quarter, Ca.name, R.status, C.price, R.business_justification)\n" +
+            hql = "SELECT new com.tw.certmaster.results.RequestResultExcel(U.name, C.title, C.quarter, Ca.name, R.status, C.price, R.business_justification)\n" +
                     "FROM Request R\n" +
                     "INNER JOIN Certification C ON R.certification_id = C.id\n" +
                     "INNER JOIN User U ON R.user_id = U.id\n" +
@@ -229,7 +229,7 @@ public class RequestsServices {
         }
 
         if( quarter != null && status != null ) {
-            hql = "SELECT new com.ibm.certmaster.results.RequestResultExcel(U.name, C.title, C.quarter, Ca.name, R.status, C.price, R.business_justification)\n" +
+            hql = "SELECT new com.tw.certmaster.results.RequestResultExcel(U.name, C.title, C.quarter, Ca.name, R.status, C.price, R.business_justification)\n" +
                     "FROM Request R\n" +
                     "INNER JOIN Certification C ON R.certification_id = C.id\n" +
                     "INNER JOIN User U ON R.user_id = U.id\n" +
@@ -254,7 +254,7 @@ public class RequestsServices {
 
         session.beginTransaction();
 
-        String hql = "SELECT new com.ibm.certmaster.results.RequestResult(R.id, U.id, U.name, C.title, Ca.id, C.quarter, Ca.name, R.status, C.price, R.business_justification)\n" +
+        String hql = "SELECT new com.tw.certmaster.results.RequestResult(R.id, U.id, U.name, C.title, Ca.id, C.quarter, Ca.name, R.status, C.price, R.business_justification)\n" +
                 "FROM Request R\n" +
                 "INNER JOIN Certification C ON R.certification_id = C.id\n" +
                 "INNER JOIN User U ON R.user_id = U.id\n" +

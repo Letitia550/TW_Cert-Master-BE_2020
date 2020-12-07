@@ -17,7 +17,7 @@ public class CertificationsServices {
         session.beginTransaction();
 
         ArrayList<CertificationResult> certifications =
-                (ArrayList<CertificationResult>) session.createQuery("SELECT new com.ibm.certmaster.results.CertificationResult(C.id, C.title, C.quarter, Ca.id, Ca.name, C.price)\n" +
+                (ArrayList<CertificationResult>) session.createQuery("SELECT new com.tw.certmaster.results.CertificationResult(C.id, C.title, C.quarter, Ca.id, Ca.name, C.price)\n" +
                         "FROM Certification C\n" +
                             "INNER JOIN Category Ca ON C.category_id = Ca.id")
                                                   .list();
