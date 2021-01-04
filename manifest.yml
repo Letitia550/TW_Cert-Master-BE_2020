@@ -1,0 +1,9 @@
+applications:
+  - path: build/libs/cert-master-0.1.war
+    name: Cert Master
+    buildpack: java_buildpack
+    environment_json: {}
+    memory: 2GB
+    instances: 1
+    disk_quota: 1024M
+    services: []
